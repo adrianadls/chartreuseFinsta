@@ -1,19 +1,23 @@
-import React, { Component } from "react";
-import "./App.css";
+import React from "react";
+import MainScreen from "./Components/MainScreen";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
+export default class App extends React.Component {
   render() {
-    return (
-      <div className="App">
-        <h1>Chartreuse Finsta</h1>
-      </div>
-    );
+    return <AppStackNavigator />;
   }
 }
 
-export default App;
+const AppStackNavigator = StackNavigator({
+  Main: {
+    screen: MainScreen
+  }
+});
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center"
+  }
+});
